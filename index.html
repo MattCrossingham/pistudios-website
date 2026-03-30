@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pi Studios</title>
+    <title>Pi Studios | Apps & Video</title>
     <style>
         :root {
             --bg-color: #fbfbfd;
             --text-color: #1d1d1f;
+            --secondary-text: #86868b;
             --accent-color: #0066cc;
             --card-bg: #ffffff;
+            --nav-bg: rgba(255, 255, 255, 0.8);
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #000000;
                 --text-color: #f5f5f7;
+                --secondary-text: #a1a1a6;
                 --accent-color: #2997ff;
                 --card-bg: #1c1c1e;
+                --nav-bg: rgba(0, 0, 0, 0.8);
             }
         }
 
@@ -28,111 +32,266 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 800px;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
             width: 100%;
-            padding: 4rem 2rem;
-            box-sizing: border-box;
+            background-color: var(--nav-bg);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(128,128,128,0.2);
+            z-index: 1000;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 3rem;
+        .nav-logo {
             font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Sections */
+        .section-header {
+            text-align: center;
+            margin: 6rem 0 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
             letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
         }
 
-        p.subtitle {
-            font-size: 1.25rem;
-            color: #86868b;
-            margin-top: 0;
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
         }
 
-        .app-card {
+        /* Grids */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
             background-color: var(--card-bg);
-            border-radius: 18px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-            transition: transform 0.2s ease;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .app-card:hover {
-            transform: translateY(-2px);
+        @media (prefers-color-scheme: dark) {
+            .card {
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            }
         }
 
-        h2 {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
             font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background-color: rgba(0, 102, 204, 0.1);
+            color: var(--accent-color);
+        }
+
+        .tag.video {
+            background-color: rgba(255, 59, 48, 0.1);
+            color: #ff3b30;
         }
 
         .button {
             display: inline-block;
             background-color: var(--accent-color);
             color: #fff;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 980px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 1rem;
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
         }
 
-        footer {
-            margin-top: 4rem;
+        /* Identity Section */
+        .identity-box {
+            background: linear-gradient(135deg, var(--card-bg), rgba(128,128,128,0.1));
+            border-radius: 24px;
+            padding: 4rem;
             text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .identity-box h2 {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(128,128,128,0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--secondary-text);
             font-size: 0.9rem;
-            color: #86868b;
-            padding-bottom: 2rem;
         }
 
         footer a {
-            color: var(--accent-color);
+            color: var(--text-color);
             text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Pi Studios 🥧</h1>
-            <p class="subtitle">Crafting beautifully native macOS utilities.</p>
-        </header>
 
-        <main>
-            <div class="app-card">
-                <h2>MacClip</h2>
-                <p>Your clipboard history, seamlessly integrated into your Mac's menu bar. Keep your recent snippets always within reach without the clutter.</p>
-                <p><strong>Status:</strong> Waiting for App Store Review</p>
-                <a href="support.html" class="button">Support & Privacy Policy</a>
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Pi Studios 🥧</a>
+            <div class="nav-links">
+                <a href="#about">Who We Are</a>
+                <a href="#apps">App Dev</a>
+                <a href="#video">Video</a>
             </div>
+        </div>
+    </nav>
 
-            <div class="app-card">
-                <h2>More Coming Soon</h2>
-                <p>We are actively building the next generation of simple, single-purpose macOS tools that respect your privacy and your wallet. No subscriptions. Just great apps.</p>
-            </div>
-        </main>
-
-        <footer>
-            <p>&copy; 2026 Pi Studios. All rights reserved.</p>
-            <p>Contact: <a href="mailto:info@pistudios.app">info@pistudios.app</a></p>
-        </footer>
+    <div class="hero">
+        <h1>Imagine it. Build it.</h1>
+        <p>A next-generation creative studio building beautifully native macOS utilities and crafting stunning cinematic video experiences.</p>
     </div>
+
+    <div class="container">
+        
+        <!-- About Us -->
+        <section id="about" class="identity-box">
+            <h2>The Future of Creation</h2>
+            <p style="font-size: 1.2rem; color: var(--secondary-text); max-width: 600px; margin: 1rem auto 0;">
+                Pi Studios is a first-of-its-kind hybrid studio. Founded by Matt, driven by human creativity, and accelerated by Pi (an integrated AI Studio Manager) alongside a specialized team of AI engineers and strategists. We don't just build apps and render video—we redefine how creative work gets done.
+            </p>
+        </section>
+
+        <!-- App Development -->
+        <section id="apps">
+            <div class="section-header">
+                <h2>Pi Studios App Development</h2>
+                <p>Native macOS utilities. No bloat. No subscriptions.</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <span class="tag">In Review</span>
+                    <h3>MacClip</h3>
+                    <p>Your clipboard history, seamlessly integrated into your Mac's menu bar. Keep your recent snippets always within reach without the clutter. Written purely in native Swift.</p>
+                    <a href="support.html" class="button">Support & Privacy</a>
+                </div>
+
+                <div class="card">
+                    <span class="tag" style="background-color: rgba(52, 199, 89, 0.1); color: #34c759;">In Development</span>
+                    <h3>The Pipeline</h3>
+                    <p>Our engineering team (led by Craig 🍎) is currently building the next wave of one-time purchase macOS utilities. Single-purpose apps designed to fix the most annoying parts of your workflow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Creation -->
+        <section id="video">
+            <div class="section-header">
+                <h2>Pi Studios Video Creation</h2>
+                <p>Pushing the boundaries of digital storytelling and animation.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <span class="tag video">Animation</span>
+                    <h3>Gravity Keepers</h3>
+                    <p>A Pixar-style animated adventure. Follow Drax, Luna, and the Hunters (Valkyrie and Solaris) as they navigate a visually stunning cinematic universe. Currently in active pre-production and shot layout.</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag video">Live Action / Pitch</span>
+                    <h3>Star Trip</h3>
+                    <p>A hilarious, high-energy Sci-Fi action-comedy and parody. The official pitch deck is currently under review by SBS.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pi Studios. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@pistudios.app">info@pistudios.app</a></p>
+    </footer>
+
 </body>
 </html>
