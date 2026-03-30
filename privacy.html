@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Studios | Website Privacy</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #ffffff;
+            --secondary-text: #a1a1a6;
+            --accent-color: #0a84ff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --nav-bg: rgba(5, 5, 5, 0.7);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--nav-bg);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo img {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+        }
+
+        /* Content Styling */
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 1.5rem;
+        }
+
+        strong {
+            color: var(--text-color);
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-logo {
+                margin-bottom: 1rem;
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+            .nav-links a {
+                margin-left: 0;
+            }
+            .container {
+                padding: 8rem 1.5rem 2rem;
+            }
+            .section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="nav-logo">
+                <img src="favicon.png" alt="Pi Studios Logo">
+                Pi Studios
+            </a>
+            <div class="nav-links">
+                <a href="/#about">Who We Are</a>
+                <a href="/#apps">App Dev</a>
+                <a href="/#video">Video</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section">
+            <h1>Pi Studios Website Privacy</h1>
+            <p><strong>Last Updated:</strong> March 30, 2026</p>
+            
+            <h2>1. Zero Trackers, Zero Cookies</h2>
+            <p>Pi Studios is committed to absolute digital privacy. This website (pistudios.app) operates without the use of HTTP cookies, tracking pixels, or third-party analytics scripts. We do not track your browsing behavior, and we do not collect, harvest, or sell personally identifiable information. Your visit to our site is entirely anonymous.</p>
+
+            <h2>2. No Hidden Scripts</h2>
+            <p>We believe in building clean, lightweight, and respectful software. Just as our macOS utilities contain zero bloatware, this website contains zero background surveillance. We do not use Google Analytics or Facebook Pixels.</p>
+
+            <h2>3. App-Specific Privacy</h2>
+            <p>Each application developed by Pi Studios operates under its own strict, application-specific Privacy Policy (such as the MacClip Privacy Policy). You can find those individual policies linked directly on their respective product pages or within the apps themselves.</p>
+
+            <h2>4. Contact Us</h2>
+            <p>If you have any questions about this Website Privacy Policy or our general data practices, please contact us at <a href="mailto:info@pistudios.app">info@pistudios.app</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pi Studios. All rights reserved.</p>
+        <p style="margin-top: 1rem;">Contact: <a href="mailto:info@pistudios.app">info@pistudios.app</a></p>
+    </footer>
+
+</body>
+</html>
