@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pi Studios | Website Privacy</title>
+    <title>Pi Studios | Support</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
@@ -97,9 +97,9 @@
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-top: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
             color: var(--text-color);
         }
@@ -122,6 +122,31 @@
             margin-bottom: 3rem;
         }
 
+        .support-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .support-card:hover {
+            transform: translateY(-2px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .support-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .support-card p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
         a {
             color: var(--accent-color);
             text-decoration: none;
@@ -129,6 +154,16 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-link:hover {
+            text-decoration: none;
         }
 
         /* Footer */
@@ -198,21 +233,29 @@
 
     <div class="container">
         <div class="section">
-            <img src="privacy-hero.jpg" alt="Privacy First at Pi Studios" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 16px; margin-bottom: 2.5rem; border: 1px solid var(--card-border);">
-            <h1>Pi Studios Website Privacy</h1>
-            <p><strong>Last Updated:</strong> March 30, 2026</p>
-            
-            <h2>1. Zero Trackers, Zero Cookies</h2>
-            <p>Pi Studios is committed to absolute digital privacy. This website (pistudios.app) operates without the use of HTTP cookies, tracking pixels, or third-party analytics scripts. We do not track your browsing behavior, and we do not collect, harvest, or sell personally identifiable information. Your visit to our site is entirely anonymous.</p>
+            <img src="support-hero.jpg" alt="Pi Studios Support" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 16px; margin-bottom: 2.5rem; border: 1px solid var(--card-border);">
+            <h1>Pi Studios Support</h1>
+            <p>How can we help you? Select a department or application below to find specific FAQs, troubleshooting steps, and contact information.</p>
 
-            <h2>2. No Hidden Scripts</h2>
-            <p>We believe in building clean, lightweight, and respectful software. Just as our macOS utilities contain zero bloatware, this website contains zero background surveillance. We do not use Google Analytics or Facebook Pixels.</p>
+            <h2>Applications</h2>
+            <a href="macclip-support.html" class="card-link">
+                <div class="support-card">
+                    <h3>MacClip</h3>
+                    <p>Find support, FAQs, and the privacy policy for our macOS clipboard manager.</p>
+                </div>
+            </a>
 
-            <h2>3. App-Specific Privacy</h2>
-            <p>Each application developed by Pi Studios operates under its own strict, application-specific Privacy Policy (such as the MacClip Privacy Policy). You can find those individual policies linked directly on their respective product pages or within the apps themselves.</p>
+            <h2>Production and Media</h2>
+            <div class="support-card" style="opacity: 0.7; cursor: default;">
+                <h3>Gravity Keepers</h3>
+                <p>Support inquiries and media requests will be available closer to the film's official release.</p>
+            </div>
 
-            <h2>4. Contact Us</h2>
-            <p>If you have any questions about this Website Privacy Policy or our general data practices, please contact us at <a href="mailto:info@pistudios.app">info@pistudios.app</a>.</p>
+            <hr style="border: 0; height: 1px; background: var(--card-border); margin: 3rem 0;">
+
+            <h2>General Inquiries</h2>
+            <p>If you have a general question about Pi Studios, partnership opportunities, or media requests, please contact us directly.</p>
+            <p><strong>Email:</strong> <a href="mailto:info@pistudios.app">info@pistudios.app</a></p>
         </div>
     </div>
 
