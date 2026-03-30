@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pi Studios | Apps & Video</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
             --bg-color: #fbfbfd;
@@ -210,6 +211,41 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: 500;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-logo {
+                margin-bottom: 0.8rem;
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+            .nav-links a {
+                margin-left: 0;
+            }
+            .hero {
+                padding: 8rem 1.5rem 3rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .identity-box {
+                padding: 2.5rem 1.5rem;
+            }
         }
     </style>
 </head>
