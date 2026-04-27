@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stints | Support & Privacy</title>
+    <title>Pi Studios | Beta Downloads</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
@@ -120,19 +120,45 @@
             color: var(--text-color);
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: var(--card-border);
-            margin: 4rem 0;
-        }
-
         .section {
             background-color: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 24px;
             padding: 3rem;
             margin-bottom: 3rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .download-btn:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.02);
+            text-decoration: none;
+        }
+
+        .warning-box {
+            background-color: rgba(255, 69, 58, 0.1);
+            border: 1px solid rgba(255, 69, 58, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .warning-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: #ffb3b0;
         }
 
         a {
@@ -204,6 +230,7 @@
                 <a href="/#apps">App Dev</a>
                 <a href="/#video">Video</a>
                 <a href="downloads.html">Downloads</a>
+                <a href="downloads.html">Downloads</a>
                 <a href="support.html">Support</a>
                 <a href="privacy.html">Privacy</a>
             </div>
@@ -212,40 +239,32 @@
 
     <div class="container">
         <div class="section">
-            <h1>Stints Support & FAQs</h1>
-            <p>If you need help with Stints or any Pi Studios products, have feature requests, or have found a bug, please reach out.</p>
-            <p><strong>Email:</strong> <a href="mailto:info@pistudios.app">info@pistudios.app</a></p>
+            <h1>Beta Downloads</h1>
+            <p>Download our latest internal testing builds below.</p>
             
-            <hr style="margin: 2rem 0;">
+            <div style="margin-top: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--card-border);">
+                <h2>MacClip (Beta)</h2>
+                <p>A native, lightweight clipboard manager for your Mac.</p>
+                <a href="downloads/MacClip.zip" class="download-btn">Download MacClip.zip</a>
+            </div>
 
-            <h3>Where do I find Stints?</h3>
-            <p>Stints is an anti-bloat utility that lives entirely natively in your Mac's menu bar at the top of your screen. Click the timer icon to access your projects and start tracking.</p>
+            <div style="margin-top: 2rem;">
+                <h2>Stints (Beta)</h2>
+                <p>Minimalist time tracking and task intervals.</p>
+                <a href="downloads/Stints.zip" class="download-btn">Download Stints.zip</a>
+            </div>
             
-            <h3>How do I use Stints?</h3>
-            <p>Simply click on the Stints icon in your menu bar. Add a new project name and hit enter, or select a previously saved project from the dropdown. Then, click "Start Tracking". When you're done, click "Stop". It's that simple.</p>
-            
-            <h3>How do I export my tracked time?</h3>
-            <p>Click the "Export CSV" button in the Stints menu. It will instantly generate an invoice-ready CSV file of all your tracked time and reveal it in your Mac's Finder (saved to your Documents folder).</p>
-            
-            <h3>How do I uninstall Stints?</h3>
-            <p>Because Stints is a native macOS application and operates within the Apple sandbox, you can uninstall it just like any other Mac App Store app. Open <strong>Launchpad</strong>, click and hold the Stints icon until it jiggles, and click the 'X' to delete it. macOS will automatically securely remove the app and its local data container.</p>
-        </div>
-
-        <div class="section">
-            <h1>Stints Privacy Policy</h1>
-            <p><strong>Last Updated:</strong> March 31, 2026</p>
-            
-            <h2>1. Data Collection</h2>
-            <p>Stints is built for privacy and performance. We do not collect, store, transmit, or share any of your time-tracking data, project names, personal information, or usage analytics. There are zero cloud accounts and zero tracking scripts.</p>
-
-            <h2>2. How Your Data is Used</h2>
-            <p>Your project names and tracked time histories are stored locally on your Mac within a secure, sandboxed container. This data never leaves your device and is only used to populate your local UI and generate your CSV exports.</p>
-
-            <h2>3. Third-Party Access</h2>
-            <p>Because Stints does not collect any data or use any third-party frameworks, absolutely no data is shared with or accessible by third parties.</p>
-
-            <h2>4. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:info@pistudios.app">info@pistudios.app</a>.</p>
+            <div class="warning-box">
+                <h3 style="margin-top:0; color:#ff6961;">Important Installation Note</h3>
+                <p>Because these are pre-release test builds, they are not yet code-signed or notarized with an Apple Developer Account. macOS Gatekeeper will block them by default.</p>
+                <p><strong>How to install:</strong></p>
+                <ol style="color: #ffb3b0; font-size: 0.95rem; padding-left: 1.2rem;">
+                    <li>Unzip the downloaded file and drag the app into your <strong>Applications</strong> folder.</li>
+                    <li><strong>Right-click</strong> (or hold Control and click) the app and select <strong>Open</strong>.</li>
+                    <li>When the warning appears, click <strong>Open</strong> anyway.</li>
+                </ol>
+                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">If macOS says the app is "damaged", open Terminal and run: <br><code>xattr -cr /Applications/MacClip.app</code></p>
+            </div>
         </div>
     </div>
 
